@@ -5,69 +5,17 @@ import {
     StyleSheet,
     View,
     ActivityIndicator,
-    Pressable, Keyboard,
+    Pressable,
 } from 'react-native';
 
 const SearchPlace = (props) => {
-    //const PLACE_URL = 'https://api.entur.io/geocoder/v1/autocomplete?size=20&lang=no';
-    //const [isLoading, setLoading] = useState(false);
-    //const [place, setPlace] = useState(props.isStartPlace ? props.initialPlace.start : props.initialPlace.stop);
-    //const [places, setPlaces] = useState('');
-
-    //console.log('SearchPlace, places: ' + JSON.stringify(props.places));
-
-    /*
-    const onChangePlace = (newPlace) => {
-        setPlace(newPlace);
-        console.log('Fetch places');
-        //Keyboard.dismiss();
-        fetchPlaces();
-    };
-    */
-/*
-    const fetchPlaces = async () => {
-        try {
-            setLoading(true);
-            const response = await
-                //https://api.entur.io/geocoder/v1/autocomplete?text=jernbane&size=20&lang=no
-                //fetch('https://reactnative.dev/movies.json');
-                fetch(PLACE_URL + '&text=' + place);
-            const json = await response.json();
-            console.log('fetch resp:' + json.features);
-            setPlaces(json.features);
-        } catch (error) {
-            console.log('fetch resp failed');
-            console.error(error);
-        } finally {
-            //console.log('fetch resp finally');
-            setLoading(false);
-        }
-    };
-*/
-/*
-    useEffect(() => {
-        //setPlace(props.initialPlace);
-        //console.log('Rerender with place: ' + props.initialPlace);
-        console.log('Inside SearchPlace useEffect: ' + JSON.stringify(places));
-        fetchPlaces();
-    }, [] );
-*/
-    //const PlaceNames = [];
     return (
         <View style={styles.placesContainer}>
-            {/*<Text style={styles.textHeader}>Search {props.isStartPlace ? 'start' : 'stop'} places</Text>*/}
             <View style={styles.searchContainer}>
-                {/*<TextInput style={styles.textInput} onChangeText={setPlace} placeholder="E.g. Ekraveien" value={place}/>*/}
                 <TextInput style={styles.textInput}
                            onChangeText={newPlace => props.onChangePlace(newPlace)}
                            placeholder="E.g. Ekraveien"
                            value={props.place}/>
-                {/*<View style={styles.buttonContainer}>
-                    <Button onPress={onChangePlace2}
-                            title="Search"
-                            color={'#000000'}
-                    />
-                </View>*/}
             </View>
 
             <View style={styles.resultPlacesContainer}>
@@ -101,8 +49,6 @@ const styles = StyleSheet.create({
         marginRight: 10,
         margin: 10,
         borderWidth:0,
-        //flexDirection: 'row',
-        //flexWrap: 'wrap',
     },
     textHeader: {
         fontSize: 14,
@@ -123,7 +69,7 @@ const styles = StyleSheet.create({
         borderColor: '#BEBEBE',
         borderRadius: 10,
         padding: 10,
-        backgroundColor: '#FFFFFFFF'
+        backgroundColor: '#FFFFFFFF',
     },
     buttonContainer: {
         flex: 1,
@@ -155,10 +101,9 @@ const styles = StyleSheet.create({
         padding: 0,
         fontSize: 15,
         fontWeight: '600',
-        //color: '#005491FF',
         color: 'black',
         justifyContent: 'center',
-    }
+    },
 });
 
 export default SearchPlace;

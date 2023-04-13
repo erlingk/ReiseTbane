@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import FetchTravel from './FetchTravel';
 import SearchPlace from './SearchPlace';
-import {View, Keyboard, Text, Pressable, StyleSheet, TouchableOpacity, Image, Button} from 'react-native';
+import {View, Keyboard, Text, StyleSheet, TouchableOpacity, Image} from 'react-native';
 
 const Travel = () => {
     const PLACE_URL = 'https://api.entur.io/geocoder/v1/autocomplete?size=20&lang=no';
@@ -93,7 +93,6 @@ const Travel = () => {
         console.log('Reset stop places1');
         setResetStopPlace(true);
 
-        //setStartPlace(INITIAL_STOP_PLACE);
         setStartPlace(INITIAL_START_PLACE);
         setStopPlace(INITIAL_STOP_PLACE);
         setStartPlaceId(INITIAL_START_PLACE_ID);
@@ -186,16 +185,10 @@ const styles = StyleSheet.create({
         backgroundColor: '#E8E8E8',
         marginBottom: 0,
         height: '100%',
-        //flexDirection: 'row',
-        //flexWrap: 'wrap',
     },
     resetContainer: {
-        //flex: 1,
         flexDirection: 'row',
         justifyContent: 'space-between',
-        //flexWrap: 'wrap',
-        //alignContent: 'space-between',
-        //alignItems: 'flex-end',
     },
     sectionTitle: {
         paddingLeft: 10,
@@ -211,8 +204,6 @@ const styles = StyleSheet.create({
         borderWidth:1,
         borderColor: '#BEBEBE',
         borderRadius: 10,
-        //flexDirection: 'row',
-        //flexWrap: 'wrap',
     },
     swapButton: {
         width: 40,
@@ -245,20 +236,11 @@ const styles = StyleSheet.create({
         fontWeight: '600',
         padding: 5,
         paddingBottom: 0,
-        /*textDecorationLine: 'line-through',
-        textDecorationStyle: 'solid',*/
     },
     timeContainer: {
         marginLeft: 10,
         margin: 10,
-        //display: 'flex',
-        //height: 1200,
-        //flex: 1,
         flexDirection: 'row',
-        //flexWrap: 'wrap',
-        //alignContent: 'space-evenly',
-        //justifyContent: 'space-around',
-        //alignItems: 'stretch',
     },
 });
 
