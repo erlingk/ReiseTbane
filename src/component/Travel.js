@@ -56,6 +56,7 @@ const Travel = () => {
         console.log('Fetch stop places');
     };
 
+
     const fetchPlaces = async (place, retries) => {
         try {
             const response = await fetch(PLACE_URL + '&text=' + place);
